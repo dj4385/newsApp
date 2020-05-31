@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { HeadingsComponent } from './headings/headings.component';
 import { ErrorComponent } from './error/error.component';
 
 
@@ -14,10 +13,6 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-  },
-  {
-    path: 'heading',
-    component: HeadingsComponent
   },
   {
     path: '**',
