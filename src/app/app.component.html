@@ -13,38 +13,15 @@
                 <!-- <mat-card-subtitle>User Email Address</mat-card-subtitle> -->
               </mat-card-header>
         </mat-card>
-        <mat-list>
-            <mat-divider></mat-divider>
-            <mat-list-item [routerLink]="['/event/view-events']" (click)="sidenav.toggle()">
-                <mat-icon mat-list-icon>security</mat-icon> COVID-19
-            </mat-list-item>
-            <mat-divider></mat-divider>
-            <mat-list-item [routerLink]="['/event/view-events']" (click)="sidenav.toggle()">
-                <mat-icon mat-list-icon>trending_up</mat-icon> Trending News
-            </mat-list-item>
-            <mat-list-item [routerLink]="['/event/add-event']" (click)="sidenav.toggle()">
-                <mat-icon mat-list-icon>language</mat-icon> Your Country
-            </mat-list-item>
-            <mat-list-item [routerLink]="['/event/add-event']" (click)="sidenav.toggle()">
-                <mat-icon mat-list-icon>location_on</mat-icon> Your Location News
-            </mat-list-item>
-            <mat-list-item [routerLink]="['/auth/register']" (click)="sidenav.toggle()">
-                <mat-icon mat-list-icon>memory</mat-icon> Technology
-            </mat-list-item>
-            <mat-list-item [routerLink]="['/auth/login']" (click)="sidenav.toggle()">
-                <mat-icon mat-list-icon>business</mat-icon> Business
-            </mat-list-item>
-            <mat-list-item [routerLink]="['/auth/login']" (click)="sidenav.toggle()">
-                <mat-icon mat-list-icon>movie</mat-icon> Entertainment
-            </mat-list-item>
-            <mat-list-item [routerLink]="['/auth/login']" (click)="sidenav.toggle()">
-                <mat-icon mat-list-icon>sports_baseball</mat-icon> Sports
+        <mat-list *ngFor="let navLink of newsCategory">
+            <mat-list-item [routerLink]="[navLink?.link1, navLink?.params]" (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>{{navLink?.icon}}</mat-icon> {{navLink?.navText}}
             </mat-list-item>
         </mat-list>
     </mat-sidenav>
     <mat-sidenav-content>
         <mat-toolbar color="primary">
-           <span><mat-icon matPrefix (click)="sidenav.toggle()">menu</mat-icon> News App</span>
+            <mat-icon matPrefix (click)="sidenav.toggle()">menu</mat-icon>  <span [routerLink]="['/home']" >News App</span>
         </mat-toolbar>
         <!-- <mat-card class="m-3"> -->
             <router-outlet></router-outlet>
