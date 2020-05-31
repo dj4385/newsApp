@@ -1,0 +1,39 @@
+<!-- <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>Drawer content</mat-drawer>
+    <mat-drawer-content>Main content</mat-drawer-content>
+</mat-drawer-container> -->
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" #sidenav closed>
+        <mat-card color="primary">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image">
+                    <mat-icon class="userIcon">account_circle</mat-icon>
+                </div>
+                <mat-card-title>News App</mat-card-title>
+                <!-- <mat-card-subtitle>User Email Address</mat-card-subtitle> -->
+              </mat-card-header>
+        </mat-card>
+        <mat-list>
+            <mat-list-item [routerLink]="['/event/view-events']" (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>event</mat-icon> News 1
+            </mat-list-item>
+            <mat-list-item [routerLink]="['/event/add-event']" *ngIf="isUserLoggedIn" (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>add_box</mat-icon> News 2
+            </mat-list-item>
+            <mat-list-item [routerLink]="['/auth/register']" (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>account_circle</mat-icon> Register
+            </mat-list-item>
+            <mat-list-item [routerLink]="['/auth/login']" (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>security</mat-icon> News 3
+            </mat-list-item>
+        </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+           <mat-icon matPrefix (click)="sidenav.toggle()">menu</mat-icon> News App
+        </mat-toolbar>
+        <mat-card class="m-3">
+            <router-outlet></router-outlet>
+        </mat-card>
+    </mat-sidenav-content>
+</mat-sidenav-container>
