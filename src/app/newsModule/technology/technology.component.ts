@@ -9,6 +9,7 @@ import { ApiService } from 'src/app/common/api.service';
 export class TechnologyComponent implements OnInit {
 
   newsObject: any = {}
+  imgNotFound: string = 'https://www.vermeer.com.au/wp-content/uploads/2016/12/attachment-no-image-available.png'
 
   constructor(
     private apiService: ApiService

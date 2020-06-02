@@ -7,7 +7,7 @@ import { ErrorComponent } from './error/error.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'news/topHeadlines',
     pathMatch: 'full'
   },
   {
