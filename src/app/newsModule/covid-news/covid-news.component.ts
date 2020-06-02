@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/common/api.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-covid-news',
@@ -12,10 +13,12 @@ export class CovidNewsComponent implements OnInit {
   imgNotFound: string = 'https://www.vermeer.com.au/wp-content/uploads/2016/12/attachment-no-image-available.png'
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private spinner: NgxSpinnerService
   ) { }
 
   ngOnInit() {
+    this.spinner.show()
     this.getCovidNews()
   }
 
@@ -24,7 +27,11 @@ export class CovidNewsComponent implements OnInit {
       res=>{
         if(res){
           this.newsObject = res
+          this.spinner.hide()
         }
+      },
+      err=>{
+        this.spinner.hide()
       }
     )
   }

@@ -10,6 +10,7 @@ import { EntertainmentComponent } from './entertainment/entertainment.component'
 import { SportsComponent } from './sports/sports.component';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material.module';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 const route: Routes = [
     {
@@ -50,6 +51,7 @@ const route: Routes = [
     imports: [
         CommonModule,
         MaterialModule,
+        NgxSpinnerModule,
         RouterModule.forChild(route)
     ],
     declarations: [
