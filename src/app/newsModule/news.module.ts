@@ -11,6 +11,7 @@ import { SportsComponent } from './sports/sports.component';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { NewsSummaryComponent } from './news-summary/news-summary.component';
 
 const route: Routes = [
     {
@@ -62,7 +63,8 @@ const route: Routes = [
         TechnologyComponent,
         BusinessComponent,
         EntertainmentComponent,
-        SportsComponent
+        SportsComponent,
+        NewsSummaryComponent
     ]
 })
 

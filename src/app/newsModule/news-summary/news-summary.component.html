@@ -1,0 +1,11 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<div class="row">
+    <div class="col-lg-12 mb-3" >
+        <mat-card color="primary">
+            <img mat-card-image [src]="news?.urlToImage ? news?.urlToImage : imgNotFound" alt="">
+            <mat-card-content>
+                <h1 class="h6">{{news?.title}}</h1>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
