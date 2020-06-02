@@ -1,7 +1,3 @@
-<!-- <mat-drawer-container class="example-container">
-    <mat-drawer mode="side" opened>Drawer content</mat-drawer>
-    <mat-drawer-content>Main content</mat-drawer-content>
-</mat-drawer-container> -->
 <mat-sidenav-container class="example-container">
     <mat-sidenav mode="side" #sidenav closed>
         <mat-card color="primary">
@@ -14,17 +10,28 @@
               </mat-card-header>
         </mat-card>
         <mat-list *ngFor="let navLink of newsCategory">
-            <mat-list-item [routerLink]="[navLink?.link1, navLink?.params]" (click)="sidenav.toggle()">
+            <mat-list-item [routerLink]="[navLink?.link1]" (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>{{navLink?.icon}}</mat-icon> {{navLink?.navText}}
             </mat-list-item>
         </mat-list>
     </mat-sidenav>
     <mat-sidenav-content>
         <mat-toolbar color="primary">
-            <mat-icon matPrefix (click)="sidenav.toggle()">menu</mat-icon>  <span [routerLink]="['/home']" >News App</span>
+            <mat-icon matPrefix (click)="sidenav.toggle()">menu</mat-icon>
         </mat-toolbar>
-        <!-- <mat-card class="m-3"> -->
-            <router-outlet></router-outlet>
-        <!-- </mat-card> -->
+            <div class="container-fluid mt-3">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <router-outlet></router-outlet>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <mat-card></mat-card>
+                    </div>
+                </div>
+            </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

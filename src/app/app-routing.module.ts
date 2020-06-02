@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
-import { NewsComponent } from './news/news.component';
 
 
 const routes: Routes = [
@@ -16,8 +15,8 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'news/:category',
-    component: NewsComponent
+    path: 'news',
+    loadChildren: './newsModule/news.module#NewsModule'
   },
   {
     path: '**',

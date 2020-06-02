@@ -7,15 +7,13 @@ import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
-import { NewsComponent } from './news/news.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ErrorComponent,
-    NewsComponent
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
