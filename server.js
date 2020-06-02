@@ -14,7 +14,7 @@ app.use(express.static('dist/bitoco'));
 // });
 
 app.get('/*', function(req, res) {
-    res.sendFile(__dirname + '/dist/bitoco/index.html');
+    res.sendFile(__dirname + '/dist//index.html');
 });
 
 app.use(express.static(path.join(__dirname, 'dist/bitoco')));
