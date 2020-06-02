@@ -45,6 +45,10 @@ const route: Routes = [
     {
         path: 'sports',
         component: SportsComponent
+    },
+    {
+        path: 'article',
+        component: NewsSummaryComponent
     }
 ]
 

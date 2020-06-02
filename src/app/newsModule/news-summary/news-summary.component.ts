@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from 'src/app/common/news.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-news-summary',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsSummaryComponent implements OnInit {
 
-  constructor() { }
+  articleSummary: any 
+  imgNotFound: string = 'https://www.vermeer.com.au/wp-content/uploads/2016/12/attachment-no-image-available.png'
+
+  constructor(
+    private newsService: NewsService,
+    private spinner: NgxSpinnerService
+  ) { }
 
   ngOnInit() {
+    this.spinner.show()
+    this.getArticleSummary()
+  }
+
+  getArticleSummary(){
+    this.newsService.getArticle().subscribe(
+      res=>{
+        if(res){
+          this.articleSummary = res
+          this.spinner.hide()
+        }
+      }
+    )
   }
 
 }

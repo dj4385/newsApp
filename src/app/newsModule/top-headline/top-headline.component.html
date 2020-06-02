@@ -1,7 +1,7 @@
 <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
 <div class="row">
     <div class="col-lg-3 col-md-3 mb-3" *ngFor="let news of newsObject?.topHeadlines?.articles">
-        <mat-card color="primary">
+        <mat-card color="primary" (click)="addArticle(news)">
             <img mat-card-image [src]="news?.urlToImage ? news?.urlToImage : imgNotFound" alt="">
             <mat-card-content>
                 <h1 class="h6">{{news?.title}}</h1>

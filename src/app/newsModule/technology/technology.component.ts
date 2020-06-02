@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/common/api.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { Router } from '@angular/router';
+import { NewsService } from 'src/app/common/news.service';
 
 @Component({
   selector: 'app-technology',
@@ -14,6 +16,8 @@ export class TechnologyComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
+    private newsService: NewsService,
+    private router: Router,
     private spinner: NgxSpinnerService
   ) { }
 
@@ -35,6 +39,13 @@ export class TechnologyComponent implements OnInit {
       }
     )
 
+  }
+
+  addArticle(news){
+    if(news){
+      this.newsService.storeArticle(news)
+      this.router.navigate(['news/article'])
+    }
   }
 
 }

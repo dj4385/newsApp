@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { NewsService } from 'src/app/common/news.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-country',
@@ -9,7 +11,9 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class CountryComponent implements OnInit {
 
   constructor(
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private newsService: NewsService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -19,4 +23,10 @@ export class CountryComponent implements OnInit {
     },1000)
   }
 
+  addArticle(news){
+    if(news){
+      this.newsService.storeArticle(news)
+      this.router.navigate(['news/article'])
+    }
+  }
 }
