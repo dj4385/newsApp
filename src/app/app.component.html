@@ -1,10 +1,6 @@
 <mat-sidenav-container class="example-container">
-    <mat-sidenav mode="side" #sidenav closed>
-<<<<<<< HEAD
-        <mat-card color="primary" >
-=======
+    <mat-sidenav mode="side" #sidenav opened>
         <mat-card color="primary">
->>>>>>> 8098dced62c27725f04081135299f6e9169bf7ff
             <mat-card-header class="text-success">
                 <div mat-card-avatar>
                     <mat-icon class="h1">wysiwyg</mat-icon>
@@ -14,7 +10,7 @@
               </mat-card-header>
         </mat-card>
         <mat-list *ngFor="let navLink of newsCategory">
-            <mat-list-item [routerLink]="[navLink?.link1]">
+            <mat-list-item [routerLink]="[navLink?.link1]" routerLinkActive="router-link-active" (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>{{navLink?.icon}}</mat-icon> {{navLink?.navText}}
             </mat-list-item>
         </mat-list>

@@ -17,7 +17,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     ErrorComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
