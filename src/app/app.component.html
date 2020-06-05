@@ -10,7 +10,7 @@
               </mat-card-header>
         </mat-card>
         <mat-list *ngFor="let navLink of newsCategory">
-            <mat-list-item [routerLink]="[navLink?.link1]" (click)="sidenav.toggle()">
+            <mat-list-item (click)="sidenav.toggle()">
                 <img [src]="navLink?.imgUrl" class="img-fluid imgCircle mr-3" alt="">
                 {{navLink?.title}}
             </mat-list-item>
@@ -22,18 +22,14 @@
         </mat-toolbar>
             <div class="container-fluid mt-3">
                 <div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <router-outlet></router-outlet>
+                                
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <mat-card>
-                            <app-top-headline-list></app-top-headline-list>
-                        </mat-card>
-                    </div>
+                    
                 </div>
             </div>
     </mat-sidenav-content>
