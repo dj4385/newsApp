@@ -7,13 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorComponent } from './error/error.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from "ngx-spinner";
-import { TopHeadlineListComponent } from './top-headline-list/top-headline-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorComponent,
-    TopHeadlineListComponent
+    ErrorComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
