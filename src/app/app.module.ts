@@ -9,12 +9,14 @@ import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { TopHeadlineListComponent } from './top-headline-list/top-headline-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    TopHeadlineListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

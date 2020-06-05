@@ -22,3 +22,8 @@
     background-color: #3f51b5;
     color: #fff;
   }
+
+  .router-link-active{
+    background-color: #3f51b5;
+    color: #fff;
+  }
