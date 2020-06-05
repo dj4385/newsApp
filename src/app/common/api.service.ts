@@ -17,4 +17,6 @@ export class ApiService{
     getTopHeadlines(newsType){
         return this.httpClient.post(`${environment.apiUrl}${newsType}`,{})
     }
+
+    getNewsBySouces = (source)=> this.httpClient.post(`${environment.apiUrl}sources`,{source: source})
 }

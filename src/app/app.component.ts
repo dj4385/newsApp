@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from './common/api.service';
 
 @Component({
   selector: 'app-root',
@@ -64,9 +65,28 @@ export class AppComponent implements OnInit {
     }
 
   ]
+  articles: any = []
+
+  constructor(
+    private apiService: ApiService
+  ){}
 
   ngOnInit(){
     // this.getLocation()
+  }
+
+  sourcesNews(sourceId){
+    if(sourceId){
+      this.apiService.getNewsBySouces(sourceId).subscribe(
+        res=>{
+          this.articles = res['topHeadlines']['articles']
+          console.log(this.articles)
+        },
+        err=>{
+          console.log(err)
+        }
+      )
+    }
   }
 
   getLocation(): void{
