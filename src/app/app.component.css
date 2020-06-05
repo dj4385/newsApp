@@ -27,3 +27,9 @@
     background-color: #3f51b5;
     color: #fff;
   }
+
+  .imgCircle{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
