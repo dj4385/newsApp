@@ -16,6 +16,7 @@ export class TopHeadlineListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // cheange versio
     this.topHeadlineList()
   }
 
