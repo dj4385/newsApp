@@ -1,3 +1,5 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-spin" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+
 <mat-sidenav-container class="example-container">
     <mat-sidenav mode="side" #sidenav opened>
         <mat-card color="primary">
@@ -25,8 +27,10 @@
                     <div class="col-lg-12 mb-4" *ngFor="let article of articles">
                         <div class="card">
                             <div class="card-body">
-                                <img [src]="article?.urlToImage" class="img-fluid" alt="" srcset="">
-                                <h1 class="h3">{{article?.title}}</h1>
+                                <img [src]="article?.urlToImage ? article?.urlToImage : imgUrl" class="img-fluid" style="width: 100%;" alt="" srcset="">
+                                <h1 class="h4 mt-3">{{article?.title}}</h1>
+                                <p>{{article?.description}}</p>
+                                <a [href]="article?.url" class="btn btn-outline-primary" target="_blank" style="float: right;"> Read Full Article </a>
                             </div>
                         </div>
                     </div>

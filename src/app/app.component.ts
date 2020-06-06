@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './common/api.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-root',
@@ -66,27 +67,47 @@ export class AppComponent implements OnInit {
 
   ]
   articles: any = []
+  imgUrl: string = 'data:image/png;base64,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'
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private spinner: NgxSpinnerService
   ){}
 
   ngOnInit(){
+    this.spinner.show()
     // this.getLocation()
+    this.getTopHeadlines()
   }
 
   sourcesNews(sourceId){
+    this.spinner.show()
     if(sourceId){
       this.apiService.getNewsBySouces(sourceId).subscribe(
         res=>{
           this.articles = res['topHeadlines']['articles']
-          console.log(this.articles)
+          this.spinner.hide()
         },
         err=>{
           console.log(err)
+          this.spinner.hide()
         }
       )
     }
+  }
+
+  getTopHeadlines(){
+    this.apiService.getTopHeadlines('topHeadline').subscribe(
+      res=>{
+        this.articles = res['topHeadlines']['articles']
+        this.spinner.hide()
+        console.log(this.articles)
+      },
+      err=>{
+        console.log(err)
+        this.spinner.hide()
+      }
+    )
   }
 
   getLocation(): void{
